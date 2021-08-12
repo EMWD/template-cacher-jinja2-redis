@@ -1,20 +1,21 @@
 import json
 import redis
 
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
+# redis = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-data = [
-    {'type':'big', 'url':'....'},
-    {'type':'big', 'url':'....'},
-    {'type':'big', 'url':'....'},
-]
+# splitted_html = []
+# with open('templates/template.html') as f:
+#     for line in f:
+#        splitted_html.append(line)
 
-# Convert python dict to JSON str and save to Redis
-json_data = json.dumps(data)
-r.set('key_word', json_data)
+# # print(len(splitted_html))
 
-# Read saved JSON str from Redis and unpack into python dict
-unpacked_images = json.loads(r.get('key_word'))
-# data == unpacked_images
+# json_html = json.dumps(splitted_html)
+# redis.set('key_word', json_html)
 
-print(data)
+# result = json.loads(redis.get('key_word'))
+# print(result)
+
+from cacher import cacher
+
+print(cacher.run())
