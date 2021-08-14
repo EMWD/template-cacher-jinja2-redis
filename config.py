@@ -12,5 +12,6 @@ class Config():
     def get(self, key):
         return self.conn_data.get(key)
 
+
 #Export Config instance
 cfg = Config()

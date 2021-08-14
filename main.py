@@ -19,10 +19,10 @@ def template_test():
 @app.route("/test")
 def template_test2():
     #You can cache any template in redis data structure
-    cacher.cache_template('templates/template2.html')
+    cacher.cache_template('templates/template2.html', 'some_keyword')
 
     # You can get yor cached template by key
-    cacher.get_cache()
+    print(cacher.get_cache('some_keyword'))
 
     return render_template(
         'template2.html',
